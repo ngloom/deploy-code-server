@@ -10,7 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
     sudo apt-get install -y yarn python3 python3-pip && \
     sudo apt-get upgrade -y
 
-RUN pip3 install jupyterlab
+RUN sudo pip3 install jupyterlab pandas plotly
 
 USER coder
 
