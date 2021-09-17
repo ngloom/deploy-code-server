@@ -7,7 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
     sudo apt-get install -y gcc g++ make iputils-ping httpie nodejs && \
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
-    sudo apt-get install -y yarn python3 python3-pip && \
+    sudo apt-get install -y unzip yarn python3 python3-pip && \
     sudo apt-get upgrade -y
 
 RUN sudo pip3 install jupyterlab pandas plotly
@@ -51,3 +51,5 @@ ENV PORT=8080
 # Use our custom entrypoint script first
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
+
+
