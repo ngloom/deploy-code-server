@@ -10,7 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
     sudo apt-get install -y unzip yarn python3 python3-pip && \
     sudo apt-get upgrade -y
 
-RUN sudo pip3 install jupyterlab pandas plotly
+RUN sudo pip3 install pylint jupyterlab pandas plotly akshare
 
 USER coder
 
@@ -35,7 +35,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension ms-python.python ms-toolsai.jupyter
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
